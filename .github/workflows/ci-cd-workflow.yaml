@@ -44,6 +44,7 @@ jobs:
         run: |
           docker build -t 354793/assign-frontend:latest ./React/via_tab
   cd:
+    needs: ci
     runs-on: ubuntu-latest
 
     steps:
@@ -55,8 +56,8 @@ jobs:
       - name: Build images in Minikube Docker daemon
         run: |
           eval $(minikube docker-env)
-          docker build -t assign-backend:latest ./backend
-          docker build -t assign-frontend:latest ./frontend
+          docker build -t assign-backend:latest ./Backend/demo/demo
+          docker build -t assign-frontend:latest ./React/via_tab
 
       - name: Apply Kubernetes resources
         run: |
