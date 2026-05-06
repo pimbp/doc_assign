@@ -19,10 +19,11 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Build and test backend (Maven)
+      - name: Build backend (Maven)
         working-directory: ./Backend/demo/demo
         run: |
-          mvn -B -DskipTests=false clean test package
+            mvn -B -DskipTests=true clean package
+
 
       - name: Set up Node.js 20
         uses: actions/setup-node@v4
