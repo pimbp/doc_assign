@@ -1,0 +1,22 @@
+# 1. Use an official Node.js image as the base
+FROM node:18-alpine
+
+#1.5 set a label for 
+
+# 2. Set the directory inside the container for our code
+WORKDIR /app
+
+# 3. Copy package files first to cache dependencies
+COPY package*.json ./
+
+# 4. Install the dependencies for your React app
+RUN npm install
+
+# 5. Copy the rest of your React source code
+COPY . .
+
+# 6. Open port 3000 for the browser to access
+EXPOSE 3000
+
+# 7. Start the React development server
+CMD ["npm", "start"]

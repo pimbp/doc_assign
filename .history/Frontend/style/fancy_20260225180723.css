@@ -1,0 +1,15 @@
+body { background-color: paleturquoise; }
+
+#sensational {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+
+    max-width: 90%;
+    background-color: thistle;
+    border-radius: 25%;
+}
+#sensational p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+}

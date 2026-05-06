@@ -1,0 +1,29 @@
+# 1. Official Node.js image as the base
+FROM node:18-alpine
+
+#1.5 Label for image organization purposes
+LABEL Name=frontend Version=0.0.1
+
+# 2. Setting the directory inside the container for our code
+WORKDIR /app
+
+# 3. Copying package files first to cache dependencies
+COPY package*.json ./
+COPY index.js ./
+
+# 4. Installing the dependencies for the React app (currently no dependencies, but this is how to add them)
+#RUN npm install
+
+# 5. Copying the rest of the React source code
+COPY . .
+
+# 6. Opening port 3000 for the browser to access
+EXPOSE 3000
+
+# 7. Starting the server
+
+#for a REACT server:
+#CMD ["npm", "start"]
+
+#for now:
+CMD ["node", "index.js"]

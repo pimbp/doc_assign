@@ -1,0 +1,7 @@
+FROM alpine:latest
+LABEL Name=frontend Version=0.0.1
+WORKDIR /frontend
+COPY . .
+EXPOSE 3000
+RUN apk add --no-cache fortune
+ENTRYPOINT ["sh", "-c", "fortune -a | cat"]

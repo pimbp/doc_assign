@@ -1,0 +1,6 @@
+services:
+  fronten:
+    image: step1
+    build:
+      context: .
+      dockerfile: ./Dockerfile
